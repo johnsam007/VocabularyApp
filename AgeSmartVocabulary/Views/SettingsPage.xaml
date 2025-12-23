@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:AgeSmartVocabulary.ViewModels"
+             x:Class="AgeSmartVocabulary.Views.SettingsPage"
+             x:DataType="viewmodels:SettingsViewModel"
+             Title="{Binding Title}"
+             BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Profile Section -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="20">
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="👤 Profile Settings"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50" />
+
+                    <!-- Age Group -->
+                    <Label Text="Age Group"
+                           FontSize="14"
+                           TextColor="#7F8C8D" />
+
+                    <Picker ItemsSource="{Binding AgeGroups}"
+                            SelectedItem="{Binding SelectedAgeGroup}"
+                            FontSize="16"
+                            TextColor="#2C3E50" />
+
+                    <!-- Notification Time -->
+                    <Label Text="Daily Notification Time"
+                           FontSize="14"
+                           TextColor="#7F8C8D"
+                           Margin="0,10,0,0" />
+
+                    <TimePicker Time="{Binding NotificationTime}"
+                               FontSize="16"
+                               TextColor="#2C3E50" />
+
+                    <!-- Save Button -->
+                    <Button Text="💾 Save Changes"
+                            Command="{Binding SaveSettingsCommand}"
+                            BackgroundColor="#27AE60"
+                            TextColor="White"
+                            FontSize="16"
+                            CornerRadius="12"
+                            HeightRequest="50"
+                            Margin="0,10,0,0" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Notification Section -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="20">
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="🔔 Notifications"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50" />
+
+                    <!-- Enable/Disable Toggle -->
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Grid.Column="0"
+                               Text="Daily Word Reminders"
+                               FontSize="16"
+                               TextColor="#2C3E50"
+                               VerticalOptions="Center" />
+                        <Switch Grid.Column="1"
+                                IsToggled="{Binding NotificationsEnabled}"
+                                OnColor="#27AE60"
+                                ThumbColor="White"
+                                Toggled="OnNotificationToggled" />
+                    </Grid>
+
+                    <!-- Test Notification Button -->
+                    <Button Text="📬 Test Notification"
+                            Command="{Binding TestNotificationCommand}"
+                            BackgroundColor="#9B59B6"
+                            TextColor="White"
+                            FontSize="16"
+                            CornerRadius="12"
+                            HeightRequest="50" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Stats Section -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="20">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="📊 Your Progress"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50" />
+
+                    <Grid ColumnDefinitions="*,Auto" RowSpacing="10">
+                        <Label Grid.Column="0"
+                               Text="Words Reviewed"
+                               FontSize="14"
+                               TextColor="#7F8C8D"
+                               VerticalOptions="Center" />
+                        <Label Grid.Column="1"
+                               Text="{Binding TotalReviewedWords}"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#3498DB"
+                               VerticalOptions="Center" />
+                    </Grid>
+
+                    <Label Text="Words are fetched live from API"
+                           FontSize="12"
+                           TextColor="#95A5A6"
+                           FontAttributes="Italic"
+                           HorizontalTextAlignment="Center"
+                           Margin="0,10,0,0" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Data Management -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="20">
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="🔄 Data Management"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50" />
+
+                    <!-- Clear History Button -->
+                    <Button Text="🗑️ Clear Review History"
+                            Command="{Binding ClearHistoryCommand}"
+                            BackgroundColor="#E74C3C"
+                            TextColor="White"
+                            FontSize="16"
+                            CornerRadius="12"
+                            HeightRequest="50" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- App Info -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="20">
+                <VerticalStackLayout Spacing="5">
+
+                    <Label Text="ℹ️ About"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50"
+                           Margin="0,0,0,10" />
+
+                    <Label Text="AgeSmart Vocabulary"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50" />
+
+                    <Label Text="Version 2.0.0 (API-Powered)"
+                           FontSize="14"
+                           TextColor="#7F8C8D" />
+
+                    <Label Text="Words fetched live from Datamuse API&#x0a;Definitions from Free Dictionary API"
+                           FontSize="14"
+                           TextColor="#7F8C8D"
+                           LineBreakMode="WordWrap"
+                           Margin="0,10,0,0" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

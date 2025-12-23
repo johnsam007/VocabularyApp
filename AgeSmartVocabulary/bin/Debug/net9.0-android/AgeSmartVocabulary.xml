@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AgeSmartVocabulary</name>
+    </assembly>
+    <members>
+        <member name="M:AgeSmartVocabulary.Helpers.DifficultyMapper.GetDifficultyFromFrequency(System.Double)">
+            <summary>
+            Map normalized frequency (0-100) to age groups
+            Higher frequency = easier word = younger age group
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.ContentFilterService.IsSafeWord(System.String)">
+            <summary>
+            Check if word is safe for children
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.ContentFilterService.IsSafeDefinition(System.String)">
+            <summary>
+            Check if definition contains inappropriate content
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.ContentFilterService.IsSafeExample(System.String)">
+            <summary>
+            Check if example is safe
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.DatamuseApiService.GetWordsForAgeGroupAsync(System.String,System.Int32)">
+            <summary>
+            Fetch age-appropriate words from Datamuse API
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.DatamuseApiService.ExtractFrequency(AgeSmartVocabulary.Models.ApiModels.DatamuseWord)">
+            <summary>
+            Extract frequency score from DatamuseWord
+            Datamuse score represents word popularity
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.DatamuseApiService.GetSimpleWordsAsync(System.Int32)">
+            <summary>
+            Get very simple, common words for young children
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.DictionaryApiService.GetWordDefinitionAsync(System.String)">
+            <summary>
+            Get word definition, examples, and phonetics
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.DictionaryApiService.GetBestDefinition(AgeSmartVocabulary.Models.ApiModels.DictionaryResponse)">
+            <summary>
+            Extract best definition and example from response
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.DictionaryApiService.GetAllDefinitions(AgeSmartVocabulary.Models.ApiModels.DictionaryResponse)">
+            <summary>
+            Get all definitions (for advanced view)
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.NotificationService.ScheduleDailyNotificationAsync">
+            <summary>
+            Schedule daily notification for word of the day
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.NotificationService.ShowTestNotificationAsync">
+            <summary>
+            Show immediate test notification
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.NotificationService.CancelAllNotifications">
+            <summary>
+            Cancel all notifications
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.NotificationService.RequestPermissionsAsync">
+            <summary>
+            Request notification permissions (iOS/Android)
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.NotificationService.AreNotificationsEnabledAsync">
+            <summary>
+            Check if notifications are enabled
+            </summary>
+        </member>
+        <member name="T:AgeSmartVocabulary.Services.ServiceTester">
+            <summary>
+            Quick tester for API services
+            Use this in MainPage.xaml.cs to verify everything works
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.WordService.GetTodayWordAsync(System.String)">
+            <summary>
+            Get a word for today - either from review schedule or fetch new
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.WordService.FetchNewWordAsync(System.String)">
+            <summary>
+            Fetch a new word that user hasn't seen
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.WordService.GetWordDataAsync(System.String,System.String)">
+            <summary>
+            Get complete word data (word + definition) with content filtering
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.WordService.MarkWordAsKnownAsync(System.String)">
+            <summary>
+            Mark word as known/reviewed
+            </summary>
+        </member>
+        <member name="M:AgeSmartVocabulary.Services.WordService.MarkWordForRevisionAsync(System.String)">
+            <summary>
+            Reset word to stage 1 (needs revision)
+            </summary>
+        </member>
+        <member name="T:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.AgeGroups">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.ageGroups"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.SelectedAgeGroup">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.selectedAgeGroup"/>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.saveAgeGroupCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.SaveAgeGroupCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.SaveAgeGroupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.AgeSelectionViewModel.SaveAgeGroupAsync"/>.</summary>
+        </member>
+        <member name="T:AgeSmartVocabulary.ViewModels.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.BaseViewModel.isBusy"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.BaseViewModel.Title">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.BaseViewModel.title"/>
+        </member>
+        <member name="T:AgeSmartVocabulary.ViewModels.HomeViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.HomeViewModel.CurrentWord">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.HomeViewModel.currentWord"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.HomeViewModel.IsLoading">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.HomeViewModel.isLoading"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.HomeViewModel.UserAgeGroup">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.HomeViewModel.userAgeGroup"/>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.HomeViewModel.loadTodayWordCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.HomeViewModel.LoadTodayWordCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.HomeViewModel.LoadTodayWordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.HomeViewModel.LoadTodayWordAsync"/>.</summary>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.HomeViewModel.markAsKnownCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.HomeViewModel.MarkAsKnownCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.HomeViewModel.MarkAsKnownCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.HomeViewModel.MarkAsKnownAsync"/>.</summary>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.HomeViewModel.markAsReviseCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.HomeViewModel.MarkAsReviseCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.HomeViewModel.MarkAsReviseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.HomeViewModel.MarkAsReviseAsync"/>.</summary>
+        </member>
+        <member name="T:AgeSmartVocabulary.ViewModels.ReviewListViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.ReviewListViewModel.ReviewSchedules">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.ReviewListViewModel.reviewSchedules"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.ReviewListViewModel.IsLoading">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.ReviewListViewModel.isLoading"/>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.ReviewListViewModel.refreshListCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.ReviewListViewModel.RefreshListCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.ReviewListViewModel.RefreshListCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.ReviewListViewModel.RefreshListAsync"/>.</summary>
+        </member>
+        <member name="T:AgeSmartVocabulary.ViewModels.SettingsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.UserProfile">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.userProfile"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.SelectedAgeGroup">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.selectedAgeGroup"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.NotificationTime">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.notificationTime"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.TotalReviewedWords">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.totalReviewedWords"/>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.NotificationsEnabled">
+            <inheritdoc cref="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.notificationsEnabled"/>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.saveSettingsCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.SaveSettingsCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.SaveSettingsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.SettingsViewModel.SaveSettingsAsync"/>.</summary>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.testNotificationCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.TestNotificationCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.TestNotificationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.SettingsViewModel.TestNotificationAsync"/>.</summary>
+        </member>
+        <member name="F:AgeSmartVocabulary.ViewModels.SettingsViewModel.clearHistoryCommand">
+            <summary>The backing field for <see cref="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.ClearHistoryCommand"/>.</summary>
+        </member>
+        <member name="P:AgeSmartVocabulary.ViewModels.SettingsViewModel.ClearHistoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:AgeSmartVocabulary.ViewModels.SettingsViewModel.ClearHistoryAsync"/>.</summary>
+        </member>
+        <member name="T:AgeSmartVocabulary.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AgeGroups">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AgeGroups" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedAgeGroup">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedAgeGroup" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentWord">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentWord" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserAgeGroup">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserAgeGroup" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ReviewSchedules">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ReviewSchedules" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserProfile">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserProfile" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NotificationTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NotificationTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalReviewedWords">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalReviewedWords" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NotificationsEnabled">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NotificationsEnabled" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AgeGroups">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AgeGroups" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedAgeGroup">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedAgeGroup" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentWord">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentWord" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserAgeGroup">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserAgeGroup" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ReviewSchedules">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ReviewSchedules" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserProfile">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserProfile" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NotificationTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NotificationTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalReviewedWords">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalReviewedWords" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NotificationsEnabled">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NotificationsEnabled" generated properties.</summary>
+        </member>
+    </members>
+</doc>

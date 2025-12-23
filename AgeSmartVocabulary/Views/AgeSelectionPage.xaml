@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:AgeSmartVocabulary.ViewModels"
+             x:Class="AgeSmartVocabulary.Views.AgeSelectionPage"
+             x:DataType="viewmodels:AgeSelectionViewModel"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <!-- Header -->
+            <Label Text="📚 AgeSmart Vocabulary"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#2C3E50" />
+
+            <Label Text="Learn words at your level"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#7F8C8D"
+                   Margin="0,0,0,30" />
+
+            <!-- Age Group List -->
+            <CollectionView ItemsSource="{Binding AgeGroups}"
+                           SelectionMode="Single"
+                           SelectedItem="{Binding SelectedAgeGroup}"
+                           SelectionChanged="OnAgeGroupSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:AgeGroupOption">
+                        <Frame Padding="20"
+                               Margin="0,5"
+                               CornerRadius="15"
+                               BackgroundColor="White"
+                               HasShadow="True">
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{Binding Label}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#2C3E50" />
+                                <Label Text="{Binding Description}"
+                                       FontSize="14"
+                                       TextColor="#95A5A6" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Continue Button -->
+            <Button Text="Continue"
+                    Command="{Binding SaveAgeGroupCommand}"
+                    BackgroundColor="#3498DB"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    Margin="0,20,0,0"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}" />
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                              IsVisible="{Binding IsBusy}"
+                              Color="#3498DB"
+                              HeightRequest="40" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

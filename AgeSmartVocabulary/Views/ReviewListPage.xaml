@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:AgeSmartVocabulary.ViewModels"
+             xmlns:models="clr-namespace:AgeSmartVocabulary.Models"
+             x:Class="AgeSmartVocabulary.Views.ReviewListPage"
+             x:DataType="viewmodels:ReviewListViewModel"
+             Title="{Binding Title}"
+             BackgroundColor="#F5F7FA">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Loading -->
+        <ActivityIndicator Grid.Row="0"
+                          IsRunning="{Binding IsLoading}"
+                          IsVisible="{Binding IsLoading}"
+                          Color="#3498DB"
+                          Margin="20" />
+
+        <!-- Review List -->
+        <RefreshView Grid.Row="1"
+                     Command="{Binding RefreshListCommand}"
+                     IsRefreshing="{Binding IsLoading}"
+                     IsVisible="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}">
+
+            <CollectionView ItemsSource="{Binding ReviewSchedules}"
+                           Margin="20,10">
+
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Spacing="10">
+                        <Label Text="🎉"
+                               FontSize="50"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="No words to review!"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="Check back tomorrow for more."
+                               FontSize="14"
+                               TextColor="#7F8C8D"
+                               HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ReviewSchedule">
+                        <Frame BackgroundColor="White"
+                               CornerRadius="15"
+                               HasShadow="True"
+                               Padding="20"
+                               Margin="0,5">
+
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="15">
+
+                                <!-- Word -->
+                                <Label Grid.Row="0" Grid.Column="0"
+                                       Text="{Binding WordText}"
+                                       FontSize="22"
+                                       FontAttributes="Bold"
+                                       TextColor="#2C3E50" />
+
+                                <!-- Stage Badge -->
+                                <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3"
+                                       BackgroundColor="#ECF0F1"
+                                       Padding="10,5"
+                                       CornerRadius="10"
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="{Binding Stage, StringFormat='Stage {0}/4'}"
+                                           FontSize="12"
+                                           FontAttributes="Bold"
+                                           TextColor="#7F8C8D" />
+                                </Frame>
+
+                                <!-- Last Reviewed -->
+                                <Label Grid.Row="1" Grid.Column="0"
+                                       Text="{Binding LastReviewed, StringFormat='Last: {0:MMM dd}'}"
+                                       FontSize="14"
+                                       TextColor="#95A5A6" />
+
+                                <!-- Next Review -->
+                                <Label Grid.Row="2" Grid.Column="0"
+                                       Text="{Binding NextReviewDate, StringFormat='Next: {0:MMM dd}'}"
+                                       FontSize="14"
+                                       TextColor="#3498DB"
+                                       FontAttributes="Bold"
+                                       Margin="0,5,0,0" />
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+    </Grid>
+</ContentPage>
