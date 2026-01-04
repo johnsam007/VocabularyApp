@@ -95,63 +95,84 @@
 
             <!-- Stats Section -->
             <Frame BackgroundColor="White"
-                   CornerRadius="15"
-                   HasShadow="True"
-                   Padding="20">
+       CornerRadius="15"
+       HasShadow="True"
+       Padding="20">
                 <VerticalStackLayout Spacing="10">
 
                     <Label Text="📊 Your Progress"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           TextColor="#2C3E50" />
+               FontSize="20"
+               FontAttributes="Bold"
+               TextColor="#2C3E50" />
 
                     <Grid ColumnDefinitions="*,Auto" RowSpacing="10">
                         <Label Grid.Column="0"
-                               Text="Words Reviewed"
-                               FontSize="14"
-                               TextColor="#7F8C8D"
-                               VerticalOptions="Center" />
+                   Text="Words Reviewed"
+                   FontSize="14"
+                   TextColor="#7F8C8D"
+                   VerticalOptions="Center" />
                         <Label Grid.Column="1"
-                               Text="{Binding TotalReviewedWords}"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               TextColor="#3498DB"
-                               VerticalOptions="Center" />
+                   Text="{Binding TotalReviewedWords}"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#3498DB"
+                   VerticalOptions="Center" />
                     </Grid>
 
+                    <Button Text="🔄 Refresh Stats"
+                Command="{Binding RefreshStatsCommand}"
+                BackgroundColor="#95A5A6"
+                TextColor="White"
+                FontSize="14"
+                CornerRadius="10"
+                HeightRequest="40"
+                Margin="0,10,0,0" />
+
                     <Label Text="Words are fetched live from API"
-                           FontSize="12"
-                           TextColor="#95A5A6"
-                           FontAttributes="Italic"
-                           HorizontalTextAlignment="Center"
-                           Margin="0,10,0,0" />
+               FontSize="12"
+               TextColor="#95A5A6"
+               FontAttributes="Italic"
+               HorizontalTextAlignment="Center"
+               Margin="0,10,0,0" />
 
                 </VerticalStackLayout>
             </Frame>
 
             <!-- Data Management -->
             <Frame BackgroundColor="White"
-                   CornerRadius="15"
-                   HasShadow="True"
-                   Padding="20">
+       CornerRadius="15"
+       HasShadow="True"
+       Padding="20">
                 <VerticalStackLayout Spacing="15">
 
                     <Label Text="🔄 Data Management"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           TextColor="#2C3E50" />
+               FontSize="20"
+               FontAttributes="Bold"
+               TextColor="#2C3E50" />
 
                     <!-- Clear History Button -->
                     <Button Text="🗑️ Clear Review History"
-                            Command="{Binding ClearHistoryCommand}"
-                            BackgroundColor="#E74C3C"
-                            TextColor="White"
-                            FontSize="16"
-                            CornerRadius="12"
-                            HeightRequest="50" />
+                Command="{Binding ClearHistoryCommand}"
+                BackgroundColor="#E74C3C"
+                TextColor="White"
+                FontSize="16"
+                CornerRadius="12"
+                HeightRequest="50"
+                IsEnabled="{Binding IsClearing, Converter={StaticResource InvertedBoolConverter}}" />
+
+                    <ActivityIndicator IsRunning="{Binding IsClearing}"
+                          IsVisible="{Binding IsClearing}"
+                          Color="#E74C3C"
+                          HeightRequest="30" />
+
+                    <Label Text="This will clear all your reviewed words and progress"
+               FontSize="12"
+               TextColor="#95A5A6"
+               HorizontalTextAlignment="Center" />
 
                 </VerticalStackLayout>
             </Frame>
+          
 
             <!-- App Info -->
             <Frame BackgroundColor="White"

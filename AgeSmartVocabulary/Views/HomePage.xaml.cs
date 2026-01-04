@@ -1,4 +1,4 @@
-using AgeSmartVocabulary.ViewModels;
+﻿using AgeSmartVocabulary.ViewModels;
 using AgeSmartVocabulary.Data;
 using AgeSmartVocabulary.Services;
 
@@ -25,6 +25,8 @@ namespace AgeSmartVocabulary.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            System.Diagnostics.Debug.WriteLine("→ HomePage appearing, refreshing word...");
             await _viewModel.InitializeAsync();
         }
     }

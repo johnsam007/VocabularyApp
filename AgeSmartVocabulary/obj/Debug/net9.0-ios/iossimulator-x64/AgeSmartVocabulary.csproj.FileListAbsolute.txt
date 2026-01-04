@@ -318,12 +318,17 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\CommunityToolkit.Mvvm.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Configuration.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Configuration.Binder.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.DependencyInjection.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Diagnostics.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Http.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Logging.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Logging.Debug.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Options.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Primitives.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Controls.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Controls.Xaml.dll
@@ -335,6 +340,7 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\SQLitePCLRaw.batteries_v2.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\SQLitePCLRaw.core.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\SQLitePCLRaw.provider.sqlite3.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Diagnostics.DiagnosticSource.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\ar\Microsoft.Maui.Controls.resources.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\ca\Microsoft.Maui.Controls.resources.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -395,7 +401,6 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Data.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Diagnostics.Contracts.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Diagnostics.Debug.dll
-C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Diagnostics.DiagnosticSource.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Diagnostics.FileVersionInfo.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Diagnostics.Process.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\System.Diagnostics.StackTrace.dll
@@ -571,6 +576,10 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\libxamarin-dotnet-nativeaot.a
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\libxamarin-dotnet.a
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.csproj.AssemblyReference.cache
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.inputs
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\mauifont.inputs
@@ -581,9 +590,6 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\mauisplash.stamp
-C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
-C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
-C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
@@ -596,6 +602,9 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.stamp
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.outputs
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\f\MauiInfo.plist
@@ -618,6 +627,7 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.AssemblyInfoInputs.cache
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.AssemblyInfo.cs
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.csproj.CoreCompileInputs.cache
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.sourcelink.json
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\XamlC.stamp
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmart.95334489.Up2Date
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.dll

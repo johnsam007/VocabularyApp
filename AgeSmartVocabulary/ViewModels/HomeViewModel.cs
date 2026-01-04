@@ -89,6 +89,8 @@ namespace AgeSmartVocabulary.ViewModels
             }
         }
 
+
+
         [RelayCommand]
         private async Task MarkAsKnownAsync()
         {
@@ -97,7 +99,13 @@ namespace AgeSmartVocabulary.ViewModels
             try
             {
                 await _wordService.MarkWordAsKnownAsync(CurrentWord.Word);
-                await Application.Current.MainPage.DisplayAlert("Great!", "You've marked this word as known! 🎉", "OK");
+
+                // Show success message
+                await Application.Current.MainPage.DisplayAlert(
+                    "✅ Great!",
+                    $"You know '{CurrentWord.Word}'! Keep going!",
+                    "Next");
+
                 await LoadTodayWordAsync();
             }
             catch (Exception ex)
@@ -114,12 +122,65 @@ namespace AgeSmartVocabulary.ViewModels
             try
             {
                 await _wordService.MarkWordForRevisionAsync(CurrentWord.Word);
-                await Application.Current.MainPage.DisplayAlert("No Problem!", "We'll review this word again tomorrow. 📝", "OK");
+
+                // Show revision message
+                await Application.Current.MainPage.DisplayAlert(
+                    "📝 No Problem!",
+                    $"We'll review '{CurrentWord.Word}' again tomorrow.",
+                    "Next");
+
                 await LoadTodayWordAsync();
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        [RelayCommand]
+        private async Task TestConnectionAsync()
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("=== Testing Internet Connection ===");
+
+                // Test 1: Check MAUI Connectivity
+                var connectivity = Connectivity.Current.NetworkAccess;
+                System.Diagnostics.Debug.WriteLine($"1. MAUI Connectivity: {connectivity}");
+
+                // Test 2: Try simple HTTP request
+                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(10) };
+
+                System.Diagnostics.Debug.WriteLine("2. Testing Google...");
+                var googleResponse = await httpClient.GetAsync("https://www.google.com");
+                System.Diagnostics.Debug.WriteLine($"   Google Status: {googleResponse.StatusCode}");
+
+                System.Diagnostics.Debug.WriteLine("3. Testing Datamuse API...");
+                var datamuseResponse = await httpClient.GetAsync("https://api.datamuse.com/words?sp=test&max=1");
+                System.Diagnostics.Debug.WriteLine($"   Datamuse Status: {datamuseResponse.StatusCode}");
+
+                System.Diagnostics.Debug.WriteLine("4. Testing Dictionary API...");
+                var dictResponse = await httpClient.GetAsync("https://api.dictionaryapi.dev/api/v2/entries/en/hello");
+                System.Diagnostics.Debug.WriteLine($"   Dictionary Status: {dictResponse.StatusCode}");
+
+                await Application.Current.MainPage.DisplayAlert(
+                    "Connection Test Passed!",
+                    $"✅ Google: {googleResponse.StatusCode}\n" +
+                    $"✅ Datamuse: {datamuseResponse.StatusCode}\n" +
+                    $"✅ Dictionary: {dictResponse.StatusCode}",
+                    "OK");
+
+                System.Diagnostics.Debug.WriteLine("=== All Tests Passed ===");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"❌ Connection Test Failed: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Stack: {ex.StackTrace}");
+
+                await Application.Current.MainPage.DisplayAlert(
+                    "Connection Test Failed",
+                    $"Error: {ex.Message}\n\nCheck Output window for details.",
+                    "OK");
             }
         }
     }

@@ -1,4 +1,4 @@
-using AgeSmartVocabulary.ViewModels;
+﻿using AgeSmartVocabulary.ViewModels;
 using AgeSmartVocabulary.Data;
 
 namespace AgeSmartVocabulary.Views
@@ -19,6 +19,8 @@ namespace AgeSmartVocabulary.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            System.Diagnostics.Debug.WriteLine("→ ReviewListPage appearing, refreshing...");
             await _viewModel.InitializeAsync();
         }
     }

@@ -25,32 +25,27 @@ namespace AgeSmartVocabulary.Services
             {
                 var allWords = new List<DatamuseWord>();
 
-                // Different strategies based on age group
                 string[] topics;
 
                 switch (ageGroup)
                 {
                     case "5-7":
-                        // Very simple, common words for young children
                         topics = new[] { "animal", "color", "food", "family", "toy", "school", "home" };
                         break;
 
                     case "8-10":
-                        // Elementary school vocabulary
                         topics = new[] { "nature", "sport", "friend", "learn", "play", "read", "science" };
                         break;
 
                     case "11-13":
-                        // Middle school vocabulary
                         topics = new[] { "technology", "history", "geography", "mathematics", "literature" };
                         break;
 
                     case "14-18":
-                        // High school vocabulary
                         topics = new[] { "philosophy", "economics", "biology", "physics", "society" };
                         break;
 
-                    default: // Adult
+                    default:
                         topics = new[] { "professional", "academic", "business", "research", "analysis" };
                         break;
                 }
@@ -61,9 +56,7 @@ namespace AgeSmartVocabulary.Services
                 {
                     try
                     {
-                        // ml= means "words related to meaning"
-                        // topics= means "topic category"
-                        var url = $"{BaseUrl}?ml={topic}&max={wordsPerTopic}";
+                        var url = $"{BaseUrl}?ml={topic}&max={wordsPerTopic}&md=s";
 
                         System.Diagnostics.Debug.WriteLine($"→ Fetching words related to: {topic}");
 
@@ -87,7 +80,13 @@ namespace AgeSmartVocabulary.Services
                     .Select(g => g.First())
                     .ToList();
 
-                System.Diagnostics.Debug.WriteLine($"✓ Total unique words: {uniqueWords.Count}");
+                // 🔽 NEW: Apply extra simplification ONLY for age group 5–7
+                if (ageGroup == "5-7")
+                {
+                    uniqueWords = ApplyYoungKidsFilter(uniqueWords);
+                }
+
+                System.Diagnostics.Debug.WriteLine($"✓ Total final words: {uniqueWords.Count}");
                 return uniqueWords;
             }
             catch (Exception ex)
@@ -95,6 +94,32 @@ namespace AgeSmartVocabulary.Services
                 System.Diagnostics.Debug.WriteLine($"❌ Datamuse API Error: {ex.Message}");
                 return new List<DatamuseWord>();
             }
+        }
+
+        /// <summary>
+        /// Extra filtering rules for very young kids (5–7)
+        /// </summary>
+        private List<DatamuseWord> ApplyYoungKidsFilter(List<DatamuseWord> words)
+        {
+            var filtered = words
+                .Where(w =>
+                    !string.IsNullOrWhiteSpace(w.Word) &&
+                    w.Word.Length <= 6 &&
+                    w.Word.All(char.IsLetter) &&
+                    ExtractFrequency(w) >= 30 // common words only
+                )
+                .ToList();
+
+            // Fallback – never return empty list
+            if (!filtered.Any())
+            {
+                filtered = words
+                    .Where(w => w.Word.Length <= 6 && w.Word.All(char.IsLetter))
+                    .Take(30)
+                    .ToList();
+            }
+
+            return filtered;
         }
 
         /// <summary>
@@ -106,20 +131,18 @@ namespace AgeSmartVocabulary.Services
             if (word.Score <= 0)
                 return 0;
 
-            // Higher score = more common word
-            // Normalize to 0-100 scale
             var normalized = Math.Log10(word.Score + 1) * 20;
             return Math.Min(100, Math.Max(0, normalized));
         }
 
         /// <summary>
         /// Get very simple, common words for young children
+        /// (kept as-is, untouched)
         /// </summary>
         public async Task<List<DatamuseWord>> GetSimpleWordsAsync(int maxWords = 50)
         {
             try
             {
-                // Use vocabulary= parameter for simple words
                 var url = $"{BaseUrl}?topics=kindergarten&max={maxWords}";
 
                 var response = await _httpClient.GetFromJsonAsync<List<DatamuseWord>>(url);

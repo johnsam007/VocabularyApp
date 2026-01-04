@@ -14,32 +14,32 @@ namespace AgeSmartVocabulary
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .UseLocalNotification() // Add this line
+                .UseLocalNotification()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            // Register Services
-            // Register Services
+            // Configure HttpClient (IMPORTANT!)
+            builder.Services.AddHttpClient();
+
+            // Register Services (Singleton - one instance for entire app)
             builder.Services.AddSingleton<DatabaseService>();
             builder.Services.AddSingleton<DatamuseApiService>();
             builder.Services.AddSingleton<DictionaryApiService>();
-            builder.Services.AddSingleton<WordService>(); // Add this
+            builder.Services.AddSingleton<WordService>();
             builder.Services.AddSingleton<NotificationService>();
 
-            // Register ViewModels
+            // Register ViewModels (Transient - new instance each time)
             builder.Services.AddTransient<AgeSelectionViewModel>();
             builder.Services.AddTransient<HomeViewModel>();
-            //builder.Services.AddTransient<WordDetailViewModel>();
             builder.Services.AddTransient<SettingsViewModel>();
             builder.Services.AddTransient<ReviewListViewModel>();
 
-            // Register Pages
+            // Register Pages (Transient - new instance each time)
             builder.Services.AddTransient<AgeSelectionPage>();
             builder.Services.AddTransient<HomePage>();
-            //builder.Services.AddTransient<WordDetailPage>();
             builder.Services.AddTransient<SettingsPage>();
             builder.Services.AddTransient<ReviewListPage>();
 

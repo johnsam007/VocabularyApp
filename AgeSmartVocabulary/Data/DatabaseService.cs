@@ -92,5 +92,15 @@ namespace AgeSmartVocabulary.Data
                 .FirstOrDefaultAsync();
             return existing != null;
         }
+
+        /// <summary>
+        /// Clear all review history
+        /// </summary>
+        public async Task ClearAllReviewsAsync()
+        {
+            await InitAsync();
+            await _database.DeleteAllAsync<ReviewSchedule>();
+            System.Diagnostics.Debug.WriteLine("✓ All review history cleared from database");
+        }
     }
 }

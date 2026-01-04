@@ -251,6 +251,34 @@ namespace AgeSmartVocabulary.Services
             await _database.SaveReviewScheduleAsync(schedule);
             System.Diagnostics.Debug.WriteLine($"✓ Marked '{word}' for revision (Stage 1)");
         }
+
+        public async Task<string> TestApiDirectAsync()
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("=== Testing APIs Directly ===");
+
+                var datamuse = await _datamuseApi.GetWordsForAgeGroupAsync("5-7", 10);
+                System.Diagnostics.Debug.WriteLine($"Datamuse returned: {datamuse.Count} words");
+
+                if (datamuse.Count > 0)
+                {
+                    var firstWord = datamuse.First().Word;
+                    System.Diagnostics.Debug.WriteLine($"First word: {firstWord}");
+
+                    var definition = await _dictionaryApi.GetWordDefinitionAsync(firstWord);
+                    System.Diagnostics.Debug.WriteLine($"Definition: {(definition != null ? "Found" : "Not found")}");
+
+                    return $"Success! Got {datamuse.Count} words. First: {firstWord}";
+                }
+
+                return "No words returned from Datamuse";
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+        }
     }
 
     public class WordData

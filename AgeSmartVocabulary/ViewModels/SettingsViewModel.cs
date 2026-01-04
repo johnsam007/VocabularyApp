@@ -26,6 +26,9 @@ namespace AgeSmartVocabulary.ViewModels
         [ObservableProperty]
         private bool notificationsEnabled;
 
+        [ObservableProperty]
+        private bool isClearing;
+
         public List<string> AgeGroups { get; } = new List<string>
         {
             "5-7", "8-10", "11-13", "14-18", "Adult"
@@ -137,12 +140,52 @@ namespace AgeSmartVocabulary.ViewModels
             if (!confirm)
                 return;
 
+            IsClearing = true;
+
             try
             {
-                // We would need to add a method to clear all reviews
+                System.Diagnostics.Debug.WriteLine("→ Clearing review history...");
+
+                // Clear all reviews from database
+                await _database.ClearAllReviewsAsync();
+
+                // Cancel all scheduled notifications
+                _notificationService.CancelAllNotifications();
+
+                // Update the count immediately
+                TotalReviewedWords = 0;
+
+                System.Diagnostics.Debug.WriteLine("✓ History cleared successfully");
+
                 await Application.Current.MainPage.DisplayAlert(
-                    "Cleared",
-                    "Review history cleared. Restart app to begin fresh.",
+                    "Success",
+                    "✅ Review history cleared!\n\nYou can now start fresh with new words. Go to Home tab to see a new word.",
+                    "OK");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"❌ Clear history error: {ex.Message}");
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            }
+            finally
+            {
+                IsClearing = false;
+            }
+        }
+
+        [RelayCommand]
+        private async Task RefreshStatsAsync()
+        {
+            try
+            {
+                var seenWords = await _database.GetSeenWordsAsync();
+                TotalReviewedWords = seenWords.Count;
+
+                System.Diagnostics.Debug.WriteLine($"✓ Stats refreshed: {TotalReviewedWords} words");
+
+                await Application.Current.MainPage.DisplayAlert(
+                    "Refreshed",
+                    $"You've reviewed {TotalReviewedWords} words",
                     "OK");
             }
             catch (Exception ex)
