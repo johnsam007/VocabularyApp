@@ -635,3 +635,4 @@ C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\D
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.pdb
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\AgeSmartVocabulary.genruntimeconfig.cache
 C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\ref\AgeSmartVocabulary.dll
+C:\Projects\AgeSmartVocabulary\johnsam007\VocabularyApp\AgeSmartVocabulary\obj\Debug\net9.0-ios\iossimulator-x64\build-signature\signature

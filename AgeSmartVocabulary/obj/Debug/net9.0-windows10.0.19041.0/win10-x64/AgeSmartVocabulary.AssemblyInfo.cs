@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgeSmartVocabulary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0dff96843544772971381934e8432ccd7a68674a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b3e0ea8cd3fb1f5bedadd2f1726d607d7b7d1756")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgeSmartVocabulary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgeSmartVocabulary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
