@@ -1,6 +1,14 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿# Visual Studio
+.vs/
 
-/.vs/AgeSmartVocabulary/FileContentIndex/84942a58-3839-4399-8f13-5bf84a84bd0f.vsidx
-/.vs/AgeSmartVocabulary/FileContentIndex
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# OS files
+.DS_Store
+Thumbs.db
