@@ -50,7 +50,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AgeSmartVocabulary",
+              "Title": "AgeSmartVocabulary.csproj",
               "DocumentMoniker": "C:\\Projects\\AgeSmartVocabulary\\johnsam007\\VocabularyApp\\AgeSmartVocabulary\\AgeSmartVocabulary.csproj",
               "RelativeDocumentMoniker": "AgeSmartVocabulary\\AgeSmartVocabulary.csproj",
               "ToolTip": "C:\\Projects\\AgeSmartVocabulary\\johnsam007\\VocabularyApp\\AgeSmartVocabulary\\AgeSmartVocabulary.csproj",
@@ -142,8 +142,7 @@
               "RelativeToolTip": "AgeSmartVocabulary\\Platforms\\Android\\MainApplication.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T16:39:18.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-03T16:39:18.323Z"
             },
             {
               "$type": "Document",
